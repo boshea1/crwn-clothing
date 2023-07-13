@@ -1,0 +1,15 @@
+const array = [{id:1},{id:2},{id:2},{id:3},{id:3},{id:4},{id:5},{id:6}]
+const unique = [...new Set(array.map((item)=> item.id))]
+const filt = array.filter(x => x.id===2).length
+const news = new Set(array).size
+
+const dict = []
+for (i in unique){
+  // console.log(unique[i])
+  let y = unique[i]
+  let innerdict = {id:unique[i], ammount:array.filter(x => x.id===y).length}
+  // unique[i].ammount = array.filter(x => x.id===x).length
+  dict.push(innerdict)
+}
+
+console.log('dict',dict)
